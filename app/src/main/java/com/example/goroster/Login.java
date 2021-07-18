@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class Login extends AppCompatActivity {
 
-    Button signUp;
+    Button signUp,btnLogin;
 
 
     @Override
@@ -23,7 +23,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         signUp = findViewById(R.id.btnSignUp);
-
+        btnLogin = findViewById(R.id.btnLogin);
 
 
         signUp.setOnClickListener(new View.OnClickListener() {
@@ -32,6 +32,13 @@ public class Login extends AppCompatActivity {
                 Intent intent = new Intent(Login.this, SignUp.class);
                 startActivity(intent);
 
+            }
+        });
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this,Dashboard.class);
+                startActivity(intent);
             }
         });
     }
