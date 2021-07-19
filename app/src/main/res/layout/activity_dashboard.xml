@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#BC9760"
+    android:clickable="true"
     tools:context=".Dashboard">
 
 
@@ -57,20 +58,45 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="190dp">
+            android:layout_height="190dp"
+            >
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_margin="20dp">
 
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="wrap_content"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:scaleType="center"
-                    app:srcCompat="@drawable/cofee_cup1" />
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="5dp"
+                    android:elevation="10dp"
+                    >
+                    // layout for the roster button
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/roundedImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/cofee_cup1_edited"
+                        android:background="@color/white"
+                        android:scaleType="centerCrop"
+                        />
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageView2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:clickable="true"-->
+<!--                    android:scaleType="center"-->
+<!--                    app:srcCompat="@drawable/cofee_cup1_edited"-->
+
+<!--                    />-->
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -78,28 +104,33 @@
                     android:fontFamily="@font/baloo"
                     android:padding="25dp"
                     android:text="Roster"
-                    android:textColor="#4A9A3C"
+                    android:textColor="#FFFFFF"
                     android:textSize="30sp" />
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:background="#00000000"
-                    android:padding="20dp"
-                    android:text="Time table"
-                    android:textColor="#4A9A3C" />
 
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+
+                        android:background="#F3F3F3"
+                        android:text="Time table"
+                        android:textColor="#FFFFFF"
+                        android:visibility="visible"
+                        app:backgroundTint="#955C20" />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
 
             </RelativeLayout>
             // icon out side the relativeLayout
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="-40dp"
-                android:src="@drawable/calendar_icon" />
+                android:layout_marginTop="-8dp"
+                android:src="@drawable/timetable_icon"/>
 
         </RelativeLayout>
 
@@ -154,7 +185,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:scaleType="matrix"
-                    app:srcCompat="@drawable/viktoria" />
+                    app:srcCompat="@drawable/viktoria_edited" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -162,7 +193,7 @@
                     android:fontFamily="@font/baloo"
                     android:padding="25dp"
                     android:text="Manager"
-                    android:textColor="#E91E63"
+                    android:textColor="#FFFFFF"
                     android:textSize="30sp" />
 
                 <Button
@@ -172,17 +203,17 @@
                     android:background="#00000000"
                     android:padding="20dp"
                     android:text="Set up roster"
-                    android:textColor="#E91E63" />
+                    android:textColor="#FFFFFF" />
 
 
             </RelativeLayout>
             // icon out side the relativeLayout
 
             <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="-40dp"
+                android:layout_marginTop="-20dp"
                 android:src="@drawable/analysis_icon" />
 
         </RelativeLayout>
