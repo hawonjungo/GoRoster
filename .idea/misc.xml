@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_dashboard.xml" value="0.275" />
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_employee.xml" value="0.24210526315789474" />
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_employee_test.xml" value="0.275" />
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_login.xml" value="0.275" />
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_main.xml" value="0.275" />
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_timetable.xml" value="0.24097222222222223" />
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/item_layout_timetable.xml" value="0.275" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

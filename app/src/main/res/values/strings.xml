@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">GoRoster</string>
+
+    <string-array name="available">
+        <item>N/A</item>
+        <item>7-12 AM</item>
+        <item>12-17 PM</item>
+        <item>7-17 PM</item>
+
+    </string-array>
 </resources>

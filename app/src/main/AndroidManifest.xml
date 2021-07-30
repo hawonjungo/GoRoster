@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GoRoster">
-        <activity android:name=".Timetable"></activity>
+        <activity
+            android:name=".Employee"
+            android:exported="true" />
+        <activity
+            android:name=".Timetable"
+            android:screenOrientation="landscape" />
         <activity android:name=".Dashboard" />
         <activity android:name=".SignUp" />
         <activity android:name=".Login" />

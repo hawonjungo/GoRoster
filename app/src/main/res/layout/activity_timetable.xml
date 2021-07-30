@@ -1,9 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Timetable">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF">
+
+
+            <ImageView
+                android:id="@+id/btnDashboardBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="15dp"
+                app:srcCompat="?attr/actionModeCloseDrawable" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="15dp"
+                app:srcCompat="@android:drawable/ic_menu_search" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bungee_inline"
+            android:gravity="center_horizontal"
+            android:text="Weekly Roster Date"
+            android:textAlignment="center"
+            android:textColor="#FA612D04"
+            android:textSize="16sp"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="400dp"
+            android:stretchColumns="1,2,3,4,5,6,7,8">
+
+            <TableRow>
+
+
+                <TextView
+                    android:layout_column="1"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Employee Name"
+                    android:textSize="8dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_column="2"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Monday"
+                    android:textSize="8dp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:layout_column="3"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Tuesday"
+                    android:textSize="8dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_column="4"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Wednesday"
+                    android:textSize="8dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_column="5"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Thursday"
+                    android:textSize="8dp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:layout_column="6"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Friday"
+                    android:textSize="8dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_column="7"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Saturday"
+                    android:textSize="8dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_column="8"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Sunday"
+                    android:textSize="8dp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewIdTimetable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>
