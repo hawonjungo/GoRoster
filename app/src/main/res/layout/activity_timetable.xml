@@ -32,7 +32,7 @@
 
 
             <ImageView
-                android:id="@+id/btnDashboardBack"
+                android:id="@+id/btnTimetableBack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -40,6 +40,7 @@
                 app:srcCompat="?attr/actionModeCloseDrawable" />
 
             <ImageView
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -74,7 +75,8 @@
                     android:padding="8dp"
                     android:text="Employee Name"
                     android:textSize="8dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    />
 
                 <TextView
                     android:layout_column="2"
@@ -82,7 +84,8 @@
                     android:padding="8dp"
                     android:text="Monday"
                     android:textSize="8dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                   />
 
 
                 <TextView
@@ -91,7 +94,8 @@
                     android:padding="8dp"
                     android:text="Tuesday"
                     android:textSize="8dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                  />
 
                 <TextView
                     android:layout_column="4"
@@ -99,7 +103,8 @@
                     android:padding="8dp"
                     android:text="Wednesday"
                     android:textSize="8dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                   />
 
                 <TextView
                     android:layout_column="5"
@@ -107,7 +112,8 @@
                     android:padding="8dp"
                     android:text="Thursday"
                     android:textSize="8dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                />
 
 
                 <TextView
@@ -116,7 +122,8 @@
                     android:padding="8dp"
                     android:text="Friday"
                     android:textSize="8dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                  />
 
                 <TextView
                     android:layout_column="7"
@@ -124,7 +131,8 @@
                     android:padding="8dp"
                     android:text="Saturday"
                     android:textSize="8dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    />
 
                 <TextView
                     android:layout_column="8"
@@ -132,7 +140,8 @@
                     android:padding="8dp"
                     android:text="Sunday"
                     android:textSize="8dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    />
 
             </TableRow>
 

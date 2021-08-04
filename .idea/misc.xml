@@ -6,10 +6,15 @@
         <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_dashboard.xml" value="0.275" />
         <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_employee.xml" value="0.24210526315789474" />
         <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_employee_test.xml" value="0.275" />
-        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_login.xml" value="0.275" />
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_login.xml" value="0.42295081967213116" />
         <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_main.xml" value="0.275" />
-        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_timetable.xml" value="0.24097222222222223" />
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_sign_up.xml" value="0.275" />
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_timetable.xml" value="0.2972972972972973" />
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_timetable2.xml" value="0.22" />
         <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/item_layout_timetable.xml" value="0.275" />
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/item_list_emp_available.xml" value="0.7725490196078432" />
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/item_list_employee.xml" value="0.67" />
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/item_timetable.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

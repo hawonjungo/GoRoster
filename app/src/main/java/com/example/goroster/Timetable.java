@@ -5,6 +5,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.goroster.dev.TestRecycleViewTable;
 import com.example.goroster.dev.TestTimeTableAdapter;
@@ -17,6 +20,7 @@ public class Timetable extends AppCompatActivity {
     // test recyclerview timetable
     RecyclerView recyclerView;
     TestTimeTableAdapter adapter;
+    ImageView btnTimetableBack;
 
 
     @Override
@@ -26,8 +30,17 @@ public class Timetable extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timetable);
 
+        btnTimetableBack = findViewById(R.id.btnTimetableBack);
+        btnTimetableBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Timetable.super.onBackPressed();
+            }
+        });
+
         recyclerView = findViewById(R.id.recyclerViewIdTimetable);
         setRecyclerView();
+
 
 
     }

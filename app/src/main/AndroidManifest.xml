@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GoRoster">
         <activity
-            android:name=".Employee"
+            android:name=".Timetable2"
+            android:exported="true" />
+        <activity
+            android:name=".EmployeeSetUp"
             android:exported="true" />
         <activity
             android:name=".Timetable"

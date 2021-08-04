@@ -109,7 +109,7 @@
                             android:layout_alignParentBottom="true"
 
                             android:background="#F3F3F3"
-                            android:text="Time table"
+                            android:text="Timetable"
                             android:textColor="#FFFFFF"
                             android:visibility="visible"
                             app:backgroundTint="#955C20" />

@@ -41,7 +41,7 @@ public class Dashboard extends AppCompatActivity {
         btnEmployee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Dashboard.this,Employee.class);
+                Intent intent = new Intent(Dashboard.this, EmployeeSetUp.class);
                 startActivity(intent);
             }
         });
