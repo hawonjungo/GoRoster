@@ -2,70 +2,102 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:stretchColumns="1,2,3,4,5,6,7,8">
+    android:gravity="center_horizontal"
+    android:layout_weight="8">
 
-    <TableRow>
+
+    <TableRow
+        android:background="@color/white">
         <TextView
-           android:id="@+id/tableId_Name"
-
-            android:textSize="8dp"
-            android:padding="8dp"
-            android:gravity="center"
-            android:layout_column="1"/>
+            android:id="@+id/tableId_Name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@color/tan_crayola"
+            android:padding="10sp"
+            android:textSize="14sp"
+            android:layout_weight="10"
+            android:gravity="center_horizontal"
+            />
         <TextView
             android:id="@+id/tableId_Mon"
-
-            android:textSize="8dp"
-            android:padding="8dp"
-            android:gravity="center"
-            android:layout_column="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Mon"
+            android:textColor="@color/rich_black_fogra"
+            android:padding="10sp"
+            android:textSize="14sp"
+            android:layout_weight="8"
+            android:gravity="center_horizontal"
             />
-
-
         <TextView
             android:id="@+id/tableId_Tue"
-
-            android:textSize="8dp"
-            android:padding="8dp"
-            android:gravity="center"
-            android:layout_column="3"/>
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Tue"
+            android:textColor="@color/black"
+            android:padding="10sp"
+            android:textSize="14sp"
+            android:layout_weight="8"
+            android:gravity="center_horizontal"
+            />
         <TextView
             android:id="@+id/tableId_Wed"
-
-            android:textSize="8dp"
-            android:padding="8dp"
-            android:gravity="center"
-            android:layout_column="4"/>
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Wed"
+            android:textColor="@color/black"
+            android:padding="10sp"
+            android:textSize="14sp"
+            android:layout_weight="8"
+            android:gravity="center_horizontal"
+            />
         <TextView
             android:id="@+id/tableId_Thu"
-
-            android:textSize="8dp"
-            android:padding="8dp"
-            android:gravity="center"
-            android:layout_column="5"/>
-
-
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Thu"
+            android:textColor="@color/black"
+            android:padding="10sp"
+            android:textSize="14sp"
+            android:layout_weight="8"
+            android:gravity="center_horizontal"
+            />
         <TextView
             android:id="@+id/tableId_Fri"
-
-            android:textSize="8dp"
-            android:padding="8dp"
-            android:gravity="center"
-            android:layout_column="6"/>
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Fri"
+            android:textColor="@color/black"
+            android:padding="10sp"
+            android:textSize="14sp"
+            android:layout_weight="8"
+            android:gravity="center_horizontal"
+            />
         <TextView
             android:id="@+id/tableId_Sat"
-
-            android:textSize="8dp"
-            android:padding="8dp"
-            android:gravity="center"
-            android:layout_column="7"/>
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sat"
+            android:textColor="@color/black"
+            android:padding="10sp"
+            android:textSize="14sp"
+            android:layout_weight="8"
+            android:gravity="center_horizontal"
+            />
         <TextView
             android:id="@+id/tableId_Sun"
-
-            android:textSize="8dp"
-            android:padding="8dp"
-            android:gravity="center"
-            android:layout_column="8"/>
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sun"
+            android:textColor="@color/black"
+            android:padding="10sp"
+            android:textSize="14sp"
+            android:layout_weight="8"
+            android:gravity="center_horizontal"
+            />
 
     </TableRow>
 
