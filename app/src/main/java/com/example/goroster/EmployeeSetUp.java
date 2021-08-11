@@ -7,17 +7,31 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Spinner;
 
 import com.example.goroster.data.EmpDatabase;
+import com.example.goroster.dev.CustomAdapter;
 import com.example.goroster.emp.Employee;
+
+import java.util.List;
 
 //implements AdapterView.OnItemClickListener
 public class EmployeeSetUp extends AppCompatActivity  {
 
-    Spinner spinnerMon,spinnerTue,spinnerWed,spinnerThu,spinnerFri,spinnerSat, spinnerSun;
+    Spinner spinnerMon;
+    Spinner spinnerTue;
+    Spinner spinnerWed;
+    Spinner spinnerThu;
+    Spinner spinnerFri;
+    Spinner spinnerSat;
+    Spinner spinnerSun;
     Button btnSave;
 
+    private ListView lvEmp;
+    private  EmpDatabase empDatabase;
+    private CustomAdapter customAdapter;
+    private List<Employee> employee;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +39,12 @@ public class EmployeeSetUp extends AppCompatActivity  {
         setContentView(R.layout.activity_employee);
 
         // create an object database from EmpDatabase to call
-        EmpDatabase dbEmp = new EmpDatabase(this);
+        empDatabase = new EmpDatabase(this);
         //dbEmp.testData();
+        iniWidget();
+        // employee list
+        employee = empDatabase.getAllEmployee();
+        //setAdapter();
 
         btnSave = findViewById(R.id.btnSave);
         btnSave.setOnClickListener(new View.OnClickListener() {
@@ -35,7 +53,7 @@ public class EmployeeSetUp extends AppCompatActivity  {
                 //  create emp to use the createEmp function from Employee without instructor
                Employee emp = createEmp();
                if(emp != null){
-                   dbEmp.addEmp(emp);
+                   empDatabase.addEmp(emp);
                    Intent intent = new Intent(EmployeeSetUp.this,Timetable.class);
                    startActivity(intent);
 
@@ -45,13 +63,7 @@ public class EmployeeSetUp extends AppCompatActivity  {
 
 
 
-        spinnerMon = findViewById(R.id.spinnerMonday);
-        spinnerTue = findViewById(R.id.spinnerTuesday);
-        spinnerWed = findViewById(R.id.spinnerWednesday);
-        spinnerThu = findViewById(R.id.spinnerThursday);
-        spinnerFri = findViewById(R.id.spinnerFriday);
-        spinnerSat = findViewById(R.id.spinnerSaturday);
-        spinnerSun = findViewById(R.id.spinnerSunday);
+
 
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(EmployeeSetUp.this,R.array.available,android.R.layout.simple_spinner_item);
@@ -86,5 +98,24 @@ public class EmployeeSetUp extends AppCompatActivity  {
        Employee emp1 = new Employee("Jun",mon,tue,wed,thu,fri,sat,sun);
        return emp1;
     }
+
+    private void iniWidget(){
+        spinnerMon = findViewById(R.id.spinnerMonday);
+        spinnerTue = findViewById(R.id.spinnerTuesday);
+        spinnerWed = findViewById(R.id.spinnerWednesday);
+        spinnerThu = findViewById(R.id.spinnerThursday);
+        spinnerFri = findViewById(R.id.spinnerFriday);
+        spinnerSat = findViewById(R.id.spinnerSaturday);
+        spinnerSun = findViewById(R.id.spinnerSunday);
+        //check
+        lvEmp = findViewById(R.id.recyclerViewIdTimetable);
+    }
+
+//    public void setAdapter(){
+//        if(customAdapter ==null){
+//            customAdapter = new CustomAdapter(this,R.layout.item_layout_timetable,employee);
+//        }
+//        lvEmp.setAdapter(customAdapter);
+//    }
 
 }

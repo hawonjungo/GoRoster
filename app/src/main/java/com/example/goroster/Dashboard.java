@@ -12,7 +12,8 @@ import android.widget.ImageView;
 public class Dashboard extends AppCompatActivity {
 
     ImageView btnDashboardBack;
-    Button btnDashboardTable,btnEmployee;
+    Button btnDashboardTable;
+    Button btnEmployee;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

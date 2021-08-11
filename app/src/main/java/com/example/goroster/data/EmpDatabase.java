@@ -93,35 +93,35 @@ public class EmpDatabase extends SQLiteOpenHelper {
         Log.d(TAG,"Add employee Successful ! ");
     }
 
-//    public List<Employee> getAllEmployee(){
-//        List<Employee> employeeList = new ArrayList<>();
-//
-//        String selectQuery = "SELECT * FROM "+TABLE_NAME;
-//        SQLiteDatabase db = this.getWritableDatabase();
-//
-//        Cursor cursor = db.rawQuery(selectQuery,null); // Null - No condition request, get all.
-//        if(cursor.moveToFirst()){
-//            do{
-//                //Initialization an employee to get the data
-//                Employee emp = new Employee();
-//
-//                emp.setId(cursor.getInt(0));
-//                emp.setName(cursor.getString(1));
-//                emp.setMonAvailable(cursor.getString(2));
-//                emp.setTueAvailable(cursor.getString(3));
-//                emp.setWebAvailable(cursor.getString(4));
-//                emp.setThuAvailable(cursor.getString(5));
-//                emp.setFriAvailable(cursor.getString(6));
-//                emp.setSatAvailable(cursor.getString(7));
-//                emp.setSunAvailable(cursor.getString(8));
-//
-//                employeeList.add(emp);
-//
-//            }while(cursor.moveToNext());
-//
-//        }
-//        db.close();
-//        return employeeList;
-//    }
+    public List<Employee> getAllEmployee(){
+        List<Employee> employeeList = new ArrayList<>();
+
+        String selectQuery = "SELECT * FROM "+TABLE_NAME;
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor cursor = db.rawQuery(selectQuery,null); // Null - No condition request, get all.
+        if(cursor.moveToFirst()){
+            do{
+                //Initialization an employee to get the data
+                Employee emp = new Employee();
+
+                emp.setId(cursor.getInt(0));
+                emp.setName(cursor.getString(1));
+                emp.setMonAvailable(cursor.getString(2));
+                emp.setTueAvailable(cursor.getString(3));
+                emp.setWebAvailable(cursor.getString(4));
+                emp.setThuAvailable(cursor.getString(5));
+                emp.setFriAvailable(cursor.getString(6));
+                emp.setSatAvailable(cursor.getString(7));
+                emp.setSunAvailable(cursor.getString(8));
+
+                employeeList.add(emp);
+
+            }while(cursor.moveToNext());
+
+        }
+        db.close();
+        return employeeList;
+    }
 
 }
