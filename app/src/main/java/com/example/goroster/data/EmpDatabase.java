@@ -26,6 +26,9 @@ public class EmpDatabase extends SQLiteOpenHelper {
     private static final Integer VERSION = 1;
 
     private static final String COL_EMPNAME ="empName";
+    private static final String COL_EMAIL ="email";
+    private static final String COL_PASSWORD ="password";
+    private static final String COL_PHONE ="phone";
     private static final String COL_ID ="id";
     private static final String COL_MON ="mon";
     private static final String COL_TUE="tue";
@@ -39,6 +42,9 @@ public class EmpDatabase extends SQLiteOpenHelper {
     private String CREATE_TABLE ="CREATE TABLE "+TABLE_NAME+" ("+
             COL_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COL_EMPNAME+" TEXT, "+
+            COL_EMAIL+" TEXT, "+
+            COL_PASSWORD+" TEXT, "+
+            COL_PHONE+" TEXT, "+
             COL_MON+ " TEXT, "+
             COL_TUE+ " TEXT, "+
             COL_WED+ " TEXT, "+
@@ -73,12 +79,17 @@ public class EmpDatabase extends SQLiteOpenHelper {
 //        Toast.makeText(context,"Data in",Toast.LENGTH_SHORT).show();
 //    }
 
+
+
     public void addEmp(Employee employee){
         // call the db out with writable
         SQLiteDatabase db = this.getWritableDatabase();
         // using values as a bridge to insert value to the table.
         ContentValues values = new ContentValues();
         values.put(COL_EMPNAME,employee.getName());
+        values.put(COL_EMAIL,employee.getEmail());
+        values.put(COL_PASSWORD,employee.getPassword());
+        values.put(COL_PHONE,employee.getPhone());
         values.put(COL_MON,employee.getMonAvailable());
         values.put(COL_TUE,employee.getTueAvailable());
         values.put(COL_WED,employee.getWebAvailable());
@@ -88,9 +99,56 @@ public class EmpDatabase extends SQLiteOpenHelper {
         values.put(COL_SUN,employee.getSunAvailable());
 
 
-        db.insert(TABLE_NAME,null,values);
+       long user = db.insert(TABLE_NAME,null,values);
+       if(user != -1){
+           Log.d(TAG,"Add employee Successful ! ");
+       } else {
+           Toast.makeText(context,"Error in Add Employee",Toast.LENGTH_SHORT).show();
+       }
         db.close();
-        Log.d(TAG,"Add employee Successful ! ");
+
+    }
+
+    public boolean verifyUser(String email){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM "+TABLE_NAME +" WHERE "+COL_EMAIL+ "=?",new String[] {email});
+        if(cursor.getCount() > 0){
+            return true;
+        }else
+            return false;
+    }
+    public boolean verifyLogin(String email, String password){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM "+TABLE_NAME +" WHERE "+COL_EMAIL+ "=?" + " AND "+COL_PASSWORD+ "=?",new String[] {email,password});
+        if(cursor.getCount() > 0){
+            return true;
+        }else
+            return false;
+    }
+    public boolean updateTimetable(String id,String mon, String tue, String wed, String thu, String fri, String sat, String sun){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM "+TABLE_NAME +" WHERE "+COL_ID+ "=?",new String[] {id});
+        if(cursor.getCount() > 0){
+            ContentValues values = new ContentValues();
+            values.put(COL_ID,id);
+            values.put(COL_MON,mon);
+            values.put(COL_TUE,tue);
+            values.put(COL_WED,wed);
+            values.put(COL_THU,thu);
+            values.put(COL_FRI,fri);
+            values.put(COL_SAT,sat);
+            values.put(COL_SUN,sun);
+
+            db.update(TABLE_NAME,values,COL_ID+" = ?", new String[]{id});
+            return true;
+        }else
+            return false;
+
+
+
     }
 
     public List<Employee> getAllEmployee(){
@@ -105,15 +163,15 @@ public class EmpDatabase extends SQLiteOpenHelper {
                 //Initialization an employee to get the data
                 Employee emp = new Employee();
 
-                emp.setId(cursor.getInt(0));
+                emp.setId(cursor.getString(0));
                 emp.setName(cursor.getString(1));
-                emp.setMonAvailable(cursor.getString(2));
-                emp.setTueAvailable(cursor.getString(3));
-                emp.setWebAvailable(cursor.getString(4));
-                emp.setThuAvailable(cursor.getString(5));
-                emp.setFriAvailable(cursor.getString(6));
-                emp.setSatAvailable(cursor.getString(7));
-                emp.setSunAvailable(cursor.getString(8));
+                emp.setMonAvailable(cursor.getString(5));
+                emp.setTueAvailable(cursor.getString(6));
+                emp.setWebAvailable(cursor.getString(7));
+                emp.setThuAvailable(cursor.getString(8));
+                emp.setFriAvailable(cursor.getString(9));
+                emp.setSatAvailable(cursor.getString(10));
+                emp.setSunAvailable(cursor.getString(11));
 
                 employeeList.add(emp);
 
@@ -123,5 +181,7 @@ public class EmpDatabase extends SQLiteOpenHelper {
         db.close();
         return employeeList;
     }
+
+
 
 }

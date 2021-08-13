@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.goroster.data.EmpDatabase;
 import com.example.goroster.dev.CustomAdapter;
@@ -28,9 +30,11 @@ public class EmployeeSetUp extends AppCompatActivity  {
     Spinner spinnerSun;
     Button btnSave;
 
+    private TextView txtName;
     private ListView lvEmp;
     private  EmpDatabase empDatabase;
     private CustomAdapter customAdapter;
+    private Employee emp;
     private List<Employee> employee;
 
     @Override
@@ -40,6 +44,13 @@ public class EmployeeSetUp extends AppCompatActivity  {
 
         // create an object database from EmpDatabase to call
         empDatabase = new EmpDatabase(this);
+        emp = new Employee();
+
+        txtName = findViewById(R.id.txtEmpName);
+
+        // _______________________________________________________BUGGGGGGGGGGGGGGGGGG!!
+     //   txtName.setText(emp.getName());
+
         //dbEmp.testData();
         iniWidget();
         // employee list
@@ -51,13 +62,12 @@ public class EmployeeSetUp extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 //  create emp to use the createEmp function from Employee without instructor
-               Employee emp = createEmp();
-               if(emp != null){
-                   empDatabase.addEmp(emp);
+
+                   updateEmp();
                    Intent intent = new Intent(EmployeeSetUp.this,Timetable.class);
                    startActivity(intent);
 
-               }
+
             }
         });
 
@@ -84,7 +94,9 @@ public class EmployeeSetUp extends AppCompatActivity  {
 
 
 
-    private Employee createEmp(){
+    private void updateEmp(){
+
+        String id = emp.getId();
         String mon = spinnerMon.getSelectedItem().toString();
         String tue = spinnerTue.getSelectedItem().toString();
         String wed = spinnerWed.getSelectedItem().toString();
@@ -93,8 +105,12 @@ public class EmployeeSetUp extends AppCompatActivity  {
         String sat = spinnerSat.getSelectedItem().toString();
         String sun = spinnerSun.getSelectedItem().toString();
 
-       Employee emp1 = new Employee("Jun",mon,tue,wed,thu,fri,sat,sun);
-       return emp1;
+        boolean isUpdate = empDatabase.updateTimetable(id,mon,tue,wed,thu,fri,sat,sun);
+        if(isUpdate == true){
+            Toast.makeText(EmployeeSetUp.this,"Saving...",Toast.LENGTH_LONG).show();
+        }else
+            Toast.makeText(EmployeeSetUp.this,"Error saving",Toast.LENGTH_SHORT).show();
+
     }
 
     private void iniWidget(){

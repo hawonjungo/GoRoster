@@ -8,6 +8,10 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.goroster.data.EmpDatabase;
+import com.example.goroster.emp.Employee;
 
 public class SignUp extends AppCompatActivity {
     private Button signUpAcc;
@@ -16,26 +20,56 @@ public class SignUp extends AppCompatActivity {
     private EditText sUpPassword;
     private EditText sUpPhone;
 
+    private EmpDatabase dbEmp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_sign_up);
 
-            signUpAcc = findViewById(R.id.btnSignUpAcc);
+        dbEmp = new EmpDatabase(this);
+        sUpNickName = findViewById(R.id.sUpNickName);
+        sUpEmail = findViewById(R.id.sUpEmail);
+        sUpPassword = findViewById(R.id.sUpPassword);
+        sUpPhone = findViewById(R.id.sUpPhone);
 
+        signUpAcc = findViewById(R.id.btnSignUpAcc);
         signUpAcc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String getNickName = sUpNickName.getText().toString();
-                String getEmail = sUpEmail.getText().toString();
-                String getPassword = sUpPassword.getText().toString();
-                String getPhone = sUpPhone.getText().toString();
+
+                Employee emp = sUpEmployee();
+                //add Sign up new account as add new employee
+                if(emp != null){
+                    dbEmp.addEmp(emp);
+                    Intent intent = new Intent(SignUp.this,Dashboard.class);
+                    startActivity(intent);
+                }
 
 
-                Intent intent = new Intent(SignUp.this,Dashboard.class);
-                startActivity(intent);
+
             }
         });
     }
+
+    private Employee sUpEmployee(){
+
+
+        String getNickName = sUpNickName.getText().toString();
+        String getEmail = sUpEmail.getText().toString();
+        String getPassword = sUpPassword.getText().toString();
+        String getPhone = sUpPhone.getText().toString();
+        boolean verifyEmail = dbEmp.verifyUser(getEmail);
+        if(verifyEmail ==false){
+            Employee emp = new Employee(getNickName,getEmail,getPassword,getPhone);
+            return emp;
+        }
+        Toast.makeText(SignUp.this,"Email already exist",Toast.LENGTH_LONG).show();
+            return null;
+
+
+
+    }
+
 }

@@ -1,12 +1,12 @@
 package com.example.goroster.emp;
 
 public class Employee {
-    private int id;
+    private String id;
     private String name;
     // for login
     private String email;
     private String password;
-    private int phone;
+    private String phone;
     // roster information
     private String monAvailable;
     private String tueAvailable;
@@ -17,6 +17,22 @@ public class Employee {
     private String sunAvailable;
 
     public Employee() {
+    }
+
+
+
+    public Employee(String name, String email, String password, String phone, String monAvailable, String tueAvailable, String webAvailable, String thuAvailable, String friAvailable, String satAvailable, String sunAvailable) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.monAvailable = monAvailable;
+        this.tueAvailable = tueAvailable;
+        this.webAvailable = webAvailable;
+        this.thuAvailable = thuAvailable;
+        this.friAvailable = friAvailable;
+        this.satAvailable = satAvailable;
+        this.sunAvailable = sunAvailable;
     }
 
     public Employee(String name, String monAvailable, String tueAvailable, String webAvailable, String thuAvailable, String friAvailable, String satAvailable, String sunAvailable) {
@@ -30,9 +46,19 @@ public class Employee {
         this.sunAvailable = sunAvailable;
     }
 
-    public Employee(int id, String name, String monAvailable, String tueAvailable, String webAvailable, String thuAvailable, String friAvailable, String satAvailable, String sunAvailable) {
+    public Employee(String name, String email, String password, String phone) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+    }
+
+    public Employee(String id, String name, String email, String password, String phone, String monAvailable, String tueAvailable, String webAvailable, String thuAvailable, String friAvailable, String satAvailable, String sunAvailable) {
         this.id = id;
         this.name = name;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
         this.monAvailable = monAvailable;
         this.tueAvailable = tueAvailable;
         this.webAvailable = webAvailable;
@@ -42,11 +68,11 @@ public class Employee {
         this.sunAvailable = sunAvailable;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -56,6 +82,30 @@ public class Employee {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getMonAvailable() {
