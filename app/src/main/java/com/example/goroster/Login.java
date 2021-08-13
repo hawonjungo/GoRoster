@@ -8,12 +8,17 @@ import android.util.Pair;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Login extends AppCompatActivity {
 
-    Button signUp,btnLogin;
+    private Button signUp;
+    private Button btnLogin;
+    private EditText email;
+    private EditText password;
+
 
 
     @Override
@@ -24,6 +29,9 @@ public class Login extends AppCompatActivity {
 
         signUp = findViewById(R.id.btnSignUp);
         btnLogin = findViewById(R.id.btnLogin);
+        email = findViewById(R.id.loginEmail);
+        password = findViewById(R.id.loginPassword);
+
 
 
         signUp.setOnClickListener(new View.OnClickListener() {

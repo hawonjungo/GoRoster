@@ -64,8 +64,6 @@ public class EmployeeSetUp extends AppCompatActivity  {
 
 
 
-
-
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(EmployeeSetUp.this,R.array.available,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerMon.setAdapter(adapter);
