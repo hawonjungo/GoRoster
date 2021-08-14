@@ -56,10 +56,12 @@ public class EmployeeSetUp extends AppCompatActivity {
         // employee list
         employee = empDatabase.getAllEmployee();
 
+        // using Intent to store email
         String logEmail = getIntent().getStringExtra("Email");
         emp.setEmail(logEmail);
 
-        Toast.makeText(EmployeeSetUp.this, "Thee mail is: "+logEmail, Toast.LENGTH_LONG).show();
+        // check email to verify instead of id
+        //Toast.makeText(EmployeeSetUp.this, "Thee mail is: "+logEmail, Toast.LENGTH_LONG).show();
 
 
 
@@ -77,7 +79,7 @@ public class EmployeeSetUp extends AppCompatActivity {
             }
         });
 
-
+        // Spinner as those dropdown menu with multiple choice
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(EmployeeSetUp.this, R.array.available, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerMon.setAdapter(adapter);
@@ -94,7 +96,7 @@ public class EmployeeSetUp extends AppCompatActivity {
 
 
     private void updateEmp() {
-
+        // get email from employee and data from spinner
         String email = emp.getEmail();
         String mon = spinnerMon.getSelectedItem().toString();
         String tue = spinnerTue.getSelectedItem().toString();
@@ -103,6 +105,7 @@ public class EmployeeSetUp extends AppCompatActivity {
         String fri = spinnerFri.getSelectedItem().toString();
         String sat = spinnerSat.getSelectedItem().toString();
         String sun = spinnerSun.getSelectedItem().toString();
+
 
         boolean isUpdate = empDatabase.updateTimetable(email, mon, tue, wed, thu, fri, sat, sun);
         if (isUpdate == true) {

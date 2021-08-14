@@ -33,9 +33,9 @@ public class Timetable extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timetable);
 
-        // check this
+        // instant employee database
             dbEmp = new EmpDatabase(this);
-           employeeList = dbEmp.getAllEmployee();
+            employeeList = dbEmp.getAllEmployee();
 
         btnTimetableBack = findViewById(R.id.btnTimetableBack);
         btnTimetableBack.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +55,7 @@ public class Timetable extends AppCompatActivity {
     private void setRecyclerView() {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         adapter = new CustomAdapter(this,employeeList,recyclerView);
         recyclerView.setAdapter(adapter);
     }

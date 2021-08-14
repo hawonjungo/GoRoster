@@ -112,8 +112,9 @@ public class EmpDatabase extends SQLiteOpenHelper {
 
 
     public boolean verifyUser(String email){
+        //create an instance of SQLITE database
         SQLiteDatabase db = this.getWritableDatabase();
-
+        // find email and return value to boolean
         Cursor cursor = db.rawQuery("SELECT * FROM "+TABLE_NAME +" WHERE "+COL_EMAIL+ "=?",new String[] {email});
         if(cursor.getCount() > 0){
             return true;
@@ -143,7 +144,7 @@ public class EmpDatabase extends SQLiteOpenHelper {
             values.put(COL_FRI,fri);
             values.put(COL_SAT,sat);
             values.put(COL_SUN,sun);
-
+            // using email instead of id
             db.update(TABLE_NAME,values,COL_EMAIL+" = ?", new String[]{email});
             return true;
         }else

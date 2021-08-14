@@ -54,7 +54,7 @@ public class SignUp extends AppCompatActivity {
     }
 
     private Employee sUpEmployee(){
-
+        // get data from User signUP
         String getNickName = sUpNickName.getText().toString();
         String getEmail = sUpEmail.getText().toString();
         String getPassword = sUpPassword.getText().toString();
