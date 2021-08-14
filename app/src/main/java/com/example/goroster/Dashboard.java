@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class Dashboard extends AppCompatActivity {
 
@@ -20,6 +21,10 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_dashboard);
+
+        String logEmail = getIntent().getStringExtra("Email");
+
+
 
         btnDashboardBack = findViewById(R.id.btnDashboardBack);
         btnDashboardBack.setOnClickListener(new View.OnClickListener() {
@@ -43,8 +48,19 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Dashboard.this, EmployeeSetUp.class);
+                intent.putExtra("Email",logEmail);
                 startActivity(intent);
             }
         });
+
+
+
+
+
+
+
+
+
+
     }
 }

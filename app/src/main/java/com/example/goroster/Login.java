@@ -24,7 +24,6 @@ public class Login extends AppCompatActivity {
     private Button btnLogin;
     private EditText email;
     private EditText password;
-
     private EmpDatabase dbEmp;
 
 
@@ -63,7 +62,9 @@ public class Login extends AppCompatActivity {
                 }else{
                     boolean logVerify = dbEmp.verifyLogin(logEmail,logPassword);
                     if(logVerify == true){
+
                         Intent intent = new Intent(Login.this,Dashboard.class);
+                        intent.putExtra("Email",logEmail);
                         startActivity(intent);
                     }else{
                         Toast.makeText(Login.this,"Incorrect email or password",Toast.LENGTH_SHORT).show();

@@ -19,7 +19,7 @@ import com.example.goroster.emp.Employee;
 import java.util.List;
 
 //implements AdapterView.OnItemClickListener
-public class EmployeeSetUp extends AppCompatActivity  {
+public class EmployeeSetUp extends AppCompatActivity {
 
     Spinner spinnerMon;
     Spinner spinnerTue;
@@ -32,7 +32,7 @@ public class EmployeeSetUp extends AppCompatActivity  {
 
     private TextView txtName;
     private ListView lvEmp;
-    private  EmpDatabase empDatabase;
+    private EmpDatabase empDatabase;
     private CustomAdapter customAdapter;
     private Employee emp;
     private List<Employee> employee;
@@ -49,13 +49,19 @@ public class EmployeeSetUp extends AppCompatActivity  {
         txtName = findViewById(R.id.txtEmpName);
 
         // _______________________________________________________BUGGGGGGGGGGGGGGGGGG!!
-     //   txtName.setText(emp.getName());
+        //   txtName.setText(emp.getName());
 
         //dbEmp.testData();
         iniWidget();
         // employee list
         employee = empDatabase.getAllEmployee();
-        //setAdapter();
+
+        String logEmail = getIntent().getStringExtra("Email");
+        emp.setEmail(logEmail);
+
+        Toast.makeText(EmployeeSetUp.this, "Thee mail is: "+logEmail, Toast.LENGTH_LONG).show();
+
+
 
         btnSave = findViewById(R.id.btnSave);
         btnSave.setOnClickListener(new View.OnClickListener() {
@@ -63,18 +69,16 @@ public class EmployeeSetUp extends AppCompatActivity  {
             public void onClick(View v) {
                 //  create emp to use the createEmp function from Employee without instructor
 
-                   updateEmp();
-                   Intent intent = new Intent(EmployeeSetUp.this,Timetable.class);
-                   startActivity(intent);
+                updateEmp();
+                Intent intent = new Intent(EmployeeSetUp.this, Timetable.class);
+                startActivity(intent);
 
 
             }
         });
 
 
-
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(EmployeeSetUp.this,R.array.available,android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(EmployeeSetUp.this, R.array.available, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerMon.setAdapter(adapter);
         spinnerTue.setAdapter(adapter);
@@ -86,17 +90,12 @@ public class EmployeeSetUp extends AppCompatActivity  {
         //spinner.setOnItemClickListener(this);
     }
 
-//    @Override
-//    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//        String text = parent.getItemAtPosition(position).toString();
-//        Toast.makeText(parent.getContext(),text, Toast.LENGTH_SHORT).show();
-//    }
 
 
 
-    private void updateEmp(){
+    private void updateEmp() {
 
-        String id = emp.getId();
+        String email = emp.getEmail();
         String mon = spinnerMon.getSelectedItem().toString();
         String tue = spinnerTue.getSelectedItem().toString();
         String wed = spinnerWed.getSelectedItem().toString();
@@ -105,15 +104,15 @@ public class EmployeeSetUp extends AppCompatActivity  {
         String sat = spinnerSat.getSelectedItem().toString();
         String sun = spinnerSun.getSelectedItem().toString();
 
-        boolean isUpdate = empDatabase.updateTimetable(id,mon,tue,wed,thu,fri,sat,sun);
-        if(isUpdate == true){
-            Toast.makeText(EmployeeSetUp.this,"Saving...",Toast.LENGTH_LONG).show();
-        }else
-            Toast.makeText(EmployeeSetUp.this,"Error saving",Toast.LENGTH_SHORT).show();
+        boolean isUpdate = empDatabase.updateTimetable(email, mon, tue, wed, thu, fri, sat, sun);
+        if (isUpdate == true) {
+            Toast.makeText(EmployeeSetUp.this, "Saving...", Toast.LENGTH_LONG).show();
+        } else
+            Toast.makeText(EmployeeSetUp.this, "Error saving", Toast.LENGTH_SHORT).show();
 
     }
 
-    private void iniWidget(){
+    private void iniWidget() {
         spinnerMon = findViewById(R.id.spinnerMonday);
         spinnerTue = findViewById(R.id.spinnerTuesday);
         spinnerWed = findViewById(R.id.spinnerWednesday);
@@ -124,12 +123,5 @@ public class EmployeeSetUp extends AppCompatActivity  {
         //check
         lvEmp = findViewById(R.id.recyclerViewIdTimetable);
     }
-
-//    public void setAdapter(){
-//        if(customAdapter ==null){
-//            customAdapter = new CustomAdapter(this,R.layout.item_layout_timetable,employee);
-//        }
-//        lvEmp.setAdapter(customAdapter);
-//    }
 
 }

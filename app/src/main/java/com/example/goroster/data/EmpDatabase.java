@@ -74,13 +74,13 @@ public class EmpDatabase extends SQLiteOpenHelper {
 
     }
 
-    // Testing database with Toast to see if the database is working
+//     Testing database with Toast to see if the database is working
 //    public void testData(){
 //        Toast.makeText(context,"Data in",Toast.LENGTH_SHORT).show();
 //    }
 
 
-
+// add new employee when signUp new account
     public void addEmp(Employee employee){
         // call the db out with writable
         SQLiteDatabase db = this.getWritableDatabase();
@@ -109,6 +109,8 @@ public class EmpDatabase extends SQLiteOpenHelper {
 
     }
 
+
+
     public boolean verifyUser(String email){
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -127,13 +129,13 @@ public class EmpDatabase extends SQLiteOpenHelper {
         }else
             return false;
     }
-    public boolean updateTimetable(String id,String mon, String tue, String wed, String thu, String fri, String sat, String sun){
+    public boolean updateTimetable(String email,String mon, String tue, String wed, String thu, String fri, String sat, String sun){
         SQLiteDatabase db = this.getWritableDatabase();
 
-        Cursor cursor = db.rawQuery("SELECT * FROM "+TABLE_NAME +" WHERE "+COL_ID+ "=?",new String[] {id});
+        Cursor cursor = db.rawQuery("SELECT * FROM "+TABLE_NAME +" WHERE "+COL_EMAIL+ "=?",new String[] {email});
         if(cursor.getCount() > 0){
             ContentValues values = new ContentValues();
-            values.put(COL_ID,id);
+            values.put(COL_EMAIL,email);
             values.put(COL_MON,mon);
             values.put(COL_TUE,tue);
             values.put(COL_WED,wed);
@@ -142,7 +144,7 @@ public class EmpDatabase extends SQLiteOpenHelper {
             values.put(COL_SAT,sat);
             values.put(COL_SUN,sun);
 
-            db.update(TABLE_NAME,values,COL_ID+" = ?", new String[]{id});
+            db.update(TABLE_NAME,values,COL_EMAIL+" = ?", new String[]{email});
             return true;
         }else
             return false;

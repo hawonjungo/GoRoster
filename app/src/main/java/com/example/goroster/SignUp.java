@@ -55,11 +55,11 @@ public class SignUp extends AppCompatActivity {
 
     private Employee sUpEmployee(){
 
-
         String getNickName = sUpNickName.getText().toString();
         String getEmail = sUpEmail.getText().toString();
         String getPassword = sUpPassword.getText().toString();
         String getPhone = sUpPhone.getText().toString();
+
         boolean verifyEmail = dbEmp.verifyUser(getEmail);
         if(verifyEmail ==false){
             Employee emp = new Employee(getNickName,getEmail,getPassword,getPhone);
