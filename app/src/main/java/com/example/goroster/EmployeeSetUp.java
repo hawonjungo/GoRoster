@@ -33,7 +33,6 @@ public class EmployeeSetUp extends AppCompatActivity {
     private TextView txtName;
     private ListView lvEmp;
     private EmpDatabase empDatabase;
-    private CustomAdapter customAdapter;
     private Employee emp;
     private List<Employee> employee;
 
@@ -45,11 +44,11 @@ public class EmployeeSetUp extends AppCompatActivity {
         // create an object database from EmpDatabase to call
         empDatabase = new EmpDatabase(this);
         emp = new Employee();
+        String logEmail = getIntent().getStringExtra("Email");
 
+        // set employee name
         txtName = findViewById(R.id.txtEmpName);
-
-        // _______________________________________________________BUGGGGGGGGGGGGGGGGGG!!
-        //   txtName.setText(emp.getName());
+        txtName.setText(empDatabase.getDbEmpName(logEmail));
 
         //dbEmp.testData();
         iniWidget();
@@ -57,7 +56,7 @@ public class EmployeeSetUp extends AppCompatActivity {
         employee = empDatabase.getAllEmployee();
 
         // using Intent to store email
-        String logEmail = getIntent().getStringExtra("Email");
+
         emp.setEmail(logEmail);
 
         // check email to verify instead of id

@@ -109,8 +109,6 @@ public class EmpDatabase extends SQLiteOpenHelper {
 
     }
 
-
-
     public boolean verifyUser(String email){
         //create an instance of SQLITE database
         SQLiteDatabase db = this.getWritableDatabase();
@@ -121,6 +119,7 @@ public class EmpDatabase extends SQLiteOpenHelper {
         }else
             return false;
     }
+
     public boolean verifyLogin(String email, String password){
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -185,6 +184,22 @@ public class EmpDatabase extends SQLiteOpenHelper {
         return employeeList;
     }
 
+    public String getDbEmpName(String email){
+        Employee emp = new Employee();
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM "+TABLE_NAME +" WHERE "+COL_EMAIL+ "=?",new String[] {email});
 
+        if(cursor.moveToFirst()) {
+            do {
+                //Initialization an employee to get the data
+
+                emp.setName(cursor.getString(1));
+
+
+            }while(cursor.moveToNext());
+        }
+        db.close();
+        return emp.getName();
+    }
 
 }

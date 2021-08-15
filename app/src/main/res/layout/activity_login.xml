@@ -103,7 +103,8 @@
                 android:background="#F3F3F3"
                 android:elevation="0dp"
                 android:text="Forget password?"
-                app:backgroundTint="#955C20" />
+                app:backgroundTint="#955C20"
+                tools:ignore="TextContrastCheck" />
 
 
             <Button
@@ -127,7 +128,8 @@
                 android:background="#F3F3F3"
                 android:elevation="0dp"
                 android:text="New member? SIGN UP"
-                app:backgroundTint="#955C20" />
+                app:backgroundTint="#955C20"
+                tools:ignore="TextContrastCheck" />
 
         </LinearLayout>
     </LinearLayout>

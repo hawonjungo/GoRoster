@@ -43,8 +43,9 @@ public class SignUp extends AppCompatActivity {
                 //add Sign up new account as add new employee
                 if(emp != null){
                     dbEmp.addEmp(emp);
-                    Intent intent = new Intent(SignUp.this,Dashboard.class);
+                    Intent intent = new Intent(SignUp.this,Login.class);
                     startActivity(intent);
+                    Toast.makeText(SignUp.this,"Sign Up successful !",Toast.LENGTH_LONG).show();
                 }
 
 

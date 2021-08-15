@@ -112,7 +112,8 @@
                             android:text="Timetable"
                             android:textColor="#FFFFFF"
                             android:visibility="visible"
-                            app:backgroundTint="#955C20" />
+                            app:backgroundTint="#955C20"
+                            tools:ignore="TextContrastCheck" />
                     </RelativeLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -182,7 +183,8 @@
                             android:text="Set Up Available"
                             android:textColor="#FFFFFF"
                             android:visibility="visible"
-                            app:backgroundTint="#955C20" />
+                            app:backgroundTint="#955C20"
+                            tools:ignore="TextContrastCheck" />
                     </RelativeLayout>
 
                 </androidx.cardview.widget.CardView>
@@ -256,7 +258,8 @@
                             android:text="Set Up Roster"
                             android:textColor="#FFFFFF"
                             android:visibility="visible"
-                            app:backgroundTint="#955C20" />
+                            app:backgroundTint="#955C20"
+                            tools:ignore="TextContrastCheck" />
                     </RelativeLayout>
 
                 </androidx.cardview.widget.CardView>

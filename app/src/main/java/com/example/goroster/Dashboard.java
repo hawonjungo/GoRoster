@@ -15,6 +15,7 @@ public class Dashboard extends AppCompatActivity {
     ImageView btnDashboardBack;
     Button btnDashboardTable;
     Button btnEmployee;
+    Button btnManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,14 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
+        btnManager = findViewById(R.id.btnManager);
+        btnManager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, Manager.class);
+                startActivity(intent);
+            }
+        });
 
 
 

@@ -3,14 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_dashboard.xml" value="0.275" />
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_dashboard.xml" value="0.36666666666666664" />
         <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_employee.xml" value="0.572" />
         <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_employee_test.xml" value="0.275" />
-        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_login.xml" value="0.69375" />
-        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_main.xml" value="0.275" />
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_login.xml" value="0.3148148148148148" />
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_main.xml" value="1.071875" />
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_manager.xml" value="0.8186157517899761" />
         <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_sign_up.xml" value="1.4666666666666666" />
         <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_timetable.xml" value="0.6104746317512275" />
-        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_timetable2.xml" value="0.22" />
+        <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/activity_timetable2.xml" value="1.4666666666666666" />
         <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/item_layout_timetable.xml" value="0.275" />
         <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/item_list_emp_available.xml" value="0.7725490196078432" />
         <entry key="..\:/STU/AIT/Android/GoRoster7667/app/src/main/res/layout/item_list_employee.xml" value="0.67" />

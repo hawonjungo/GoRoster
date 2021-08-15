@@ -22,7 +22,6 @@ public class Timetable extends AppCompatActivity {
     CustomAdapter adapter;
     ImageView btnTimetableBack;
     private EmpDatabase dbEmp;
-    public Employee employee;
     private List<Employee> employeeList ;
 
 

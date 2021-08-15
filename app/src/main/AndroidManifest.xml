@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.goroster">
+    package="com.example.goroster" >
 
     <application
         android:allowBackup="true"
@@ -8,9 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GoRoster">
+        android:theme="@style/Theme.GoRoster" >
         <activity
-            android:name=".Timetable2"
+            android:name=".Manager"
             android:exported="true" />
         <activity
             android:name=".EmployeeSetUp"
@@ -21,7 +21,7 @@
         <activity android:name=".Dashboard" />
         <activity android:name=".SignUp" />
         <activity android:name=".Login" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
