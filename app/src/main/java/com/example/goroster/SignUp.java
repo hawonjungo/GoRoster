@@ -34,6 +34,7 @@ public class SignUp extends AppCompatActivity {
         sUpPassword = findViewById(R.id.sUpPassword);
         sUpPhone = findViewById(R.id.sUpPhone);
 
+        // button sign up
         signUpAcc = findViewById(R.id.btnSignUpAcc);
         signUpAcc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +63,7 @@ public class SignUp extends AppCompatActivity {
         String getPhone = sUpPhone.getText().toString();
 
         boolean verifyEmail = dbEmp.verifyUser(getEmail);
+        // check if email exist
         if(verifyEmail ==false){
             Employee emp = new Employee(getNickName,getEmail,getPassword,getPhone);
             return emp;

@@ -19,33 +19,7 @@ public class Employee {
     public Employee() {
     }
 
-
-
-    public Employee(String name, String email, String password, String phone, String monAvailable, String tueAvailable, String webAvailable, String thuAvailable, String friAvailable, String satAvailable, String sunAvailable) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.phone = phone;
-        this.monAvailable = monAvailable;
-        this.tueAvailable = tueAvailable;
-        this.webAvailable = webAvailable;
-        this.thuAvailable = thuAvailable;
-        this.friAvailable = friAvailable;
-        this.satAvailable = satAvailable;
-        this.sunAvailable = sunAvailable;
-    }
-
-    public Employee(String name, String monAvailable, String tueAvailable, String webAvailable, String thuAvailable, String friAvailable, String satAvailable, String sunAvailable) {
-        this.name = name;
-        this.monAvailable = monAvailable;
-        this.tueAvailable = tueAvailable;
-        this.webAvailable = webAvailable;
-        this.thuAvailable = thuAvailable;
-        this.friAvailable = friAvailable;
-        this.satAvailable = satAvailable;
-        this.sunAvailable = sunAvailable;
-    }
-
+// only this constructor for create employee used to sign up
     public Employee(String name, String email, String password, String phone) {
         this.name = name;
         this.email = email;
@@ -53,20 +27,7 @@ public class Employee {
         this.phone = phone;
     }
 
-    public Employee(String id, String name, String email, String password, String phone, String monAvailable, String tueAvailable, String webAvailable, String thuAvailable, String friAvailable, String satAvailable, String sunAvailable) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.phone = phone;
-        this.monAvailable = monAvailable;
-        this.tueAvailable = tueAvailable;
-        this.webAvailable = webAvailable;
-        this.thuAvailable = thuAvailable;
-        this.friAvailable = friAvailable;
-        this.satAvailable = satAvailable;
-        this.sunAvailable = sunAvailable;
-    }
+
 
     public String getId() {
         return id;

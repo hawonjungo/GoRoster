@@ -183,7 +183,7 @@ public class EmpDatabase extends SQLiteOpenHelper {
         db.close();
         return employeeList;
     }
-
+// get Employee name to show their name from database table
     public String getDbEmpName(String email){
         Employee emp = new Employee();
         SQLiteDatabase db = this.getWritableDatabase();
@@ -192,10 +192,7 @@ public class EmpDatabase extends SQLiteOpenHelper {
         if(cursor.moveToFirst()) {
             do {
                 //Initialization an employee to get the data
-
                 emp.setName(cursor.getString(1));
-
-
             }while(cursor.moveToNext());
         }
         db.close();

@@ -26,7 +26,7 @@ public class Dashboard extends AppCompatActivity {
         String logEmail = getIntent().getStringExtra("Email");
 
 
-
+        // button back
         btnDashboardBack = findViewById(R.id.btnDashboardBack);
         btnDashboardBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,7 +34,7 @@ public class Dashboard extends AppCompatActivity {
                 Dashboard.super.onBackPressed();
             }
         });
-
+        // button table - roster
         btnDashboardTable = findViewById(R.id.btnDashboardTable);
         btnDashboardTable.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +43,7 @@ public class Dashboard extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        // button for employee input availability
         btnEmployee = findViewById(R.id.btnEmployee);
         btnEmployee.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +53,7 @@ public class Dashboard extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        // button manager
         btnManager = findViewById(R.id.btnManager);
         btnManager.setOnClickListener(new View.OnClickListener() {
             @Override

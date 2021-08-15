@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         logo.setAnimation(botAnim);
         slogan.setAnimation(botAnim);
 
+
+        // just for the animation on splash screen
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

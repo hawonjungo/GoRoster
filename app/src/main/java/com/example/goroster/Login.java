@@ -41,7 +41,7 @@ public class Login extends AppCompatActivity {
         password = findViewById(R.id.loginPassword);
 
 
-
+        // button sign up
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,19 +50,20 @@ public class Login extends AppCompatActivity {
 
             }
         });
+        // button login
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 String logEmail = email.getText().toString();
                 String logPassword = password.getText().toString();
-
+                // check if email and pass work is empty or not
                 if(logEmail.equals("") || logPassword.equals("")){
                     Toast.makeText(Login.this,"Email or password can't be empty",Toast.LENGTH_SHORT).show();
                 }else{
                     boolean logVerify = dbEmp.verifyLogin(logEmail,logPassword);
+                    // for verify email and password to the database
                     if(logVerify == true){
-
                         Intent intent = new Intent(Login.this,Dashboard.class);
                         intent.putExtra("Email",logEmail);
                         startActivity(intent);

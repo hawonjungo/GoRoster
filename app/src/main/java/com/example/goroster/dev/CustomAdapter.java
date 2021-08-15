@@ -38,8 +38,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
        LayoutInflater inflater = LayoutInflater.from(context);
        View view = inflater.inflate(R.layout.item_layout_timetable,parent,false);
-
-        //View view = LayoutInflater.from(context).inflate(R.layout.item_layout_timetable,parent,false);
         return new ViewHolder(view);
     }
 
