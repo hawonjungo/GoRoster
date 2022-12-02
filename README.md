@@ -13,7 +13,7 @@
 
 - 📄 Know about my experiences [relifes.net](relifes.net)
 
-<h3 align="left">Connect with me:</h3>
+
 <p align="left">
 </p>
 
@@ -29,4 +29,7 @@ This was a university project in Java Class. The app was created only with Java,
 
 ## Some screenshot.
 ![combine_images(2)](https://user-images.githubusercontent.com/27058497/205298146-8b4bb255-0150-4f8f-993c-3ead64641d34.jpg)
+## Here is the poor design section
+![emp](https://user-images.githubusercontent.com/27058497/205300961-0bde9608-3fed-4674-ace0-f45843de4f50.png)
+![roster](https://user-images.githubusercontent.com/27058497/205300968-f041200a-8c35-44ef-a9cf-f76d1f9ad563.png)
 
