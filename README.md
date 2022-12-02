@@ -25,7 +25,7 @@
 # Here for this project section: My first Android App ever !
 
 Please be kind to my first "hello world" on Android industry.
-This was a university project in Java Class.
+This was a university project in Java Class. The app was created only with Java, with only a few basics function and a bit of poor design, but it was great experience and totally worthwhile for me.
 
 ## Some screenshot.
 ![combine_images(2)](https://user-images.githubusercontent.com/27058497/205298146-8b4bb255-0150-4f8f-993c-3ead64641d34.jpg)
