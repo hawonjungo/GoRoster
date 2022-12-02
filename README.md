@@ -33,6 +33,6 @@ This was a university project in Java Class. The app was created only with Java,
 
 ![roster](https://user-images.githubusercontent.com/27058497/205300968-f041200a-8c35-44ef-a9cf-f76d1f9ad563.png)
 
-<img align="left" width="100" height="100" src="[http://www.fillmurray.com/100/100](https://user-images.githubusercontent.com/27058497/205301597-123ba029-0b8d-4bff-9e27-c6662944ef93.PNG)">
+
 
 
