@@ -30,6 +30,6 @@ This was a university project in Java Class. The app was created only with Java,
 ## Some screenshot.
 ![combine_images(2)](https://user-images.githubusercontent.com/27058497/205298146-8b4bb255-0150-4f8f-993c-3ead64641d34.jpg)
 ## Here is the poor design section
-
+![212](https://user-images.githubusercontent.com/27058497/205301597-123ba029-0b8d-4bff-9e27-c6662944ef93.PNG)
 ![roster](https://user-images.githubusercontent.com/27058497/205300968-f041200a-8c35-44ef-a9cf-f76d1f9ad563.png)
 
